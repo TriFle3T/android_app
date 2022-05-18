@@ -45,4 +45,8 @@ dependencies {
     implementation 'com.google.code.gson:gson:2.8.5'
     implementation 'com.squareup.retrofit2:retrofit:2.6.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.6.0'
+
+    // Firebase
+    implementation 'com.google.firebase:firebase-auth:21.0.4'
+    implementation 'com.google.android.gms:play-services-auth:20.2.0'
 }
