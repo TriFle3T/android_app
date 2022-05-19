@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "1079703173153",
+    "project_id": "huglogin-f3f78",
+    "storage_bucket": "huglogin-f3f78.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1079703173153:android:5f805ab36aed268a1d0b60",
+        "android_client_info": {
+          "package_name": "com.trifle.android.hug"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1079703173153-0p13bql08rbdecp1o1m4cgg0am4kbtb4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.trifle.android.hug",
+            "certificate_hash": "a302534fcbc1b4ac22223b0b061d64b9add5aa42"
+          }
+        },
+        {
+          "client_id": "1079703173153-dfmgttal0upe9gi15hoslo9hpve6rmb0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.trifle.android.hug",
+            "certificate_hash": "06df47c2218e03b7c694935a55ae8ed3aa6b2fef"
+          }
+        },
+        {
+          "client_id": "1079703173153-cbuon1gj18c8br742fghdlfpi682csl2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDKbbEScjG6bFNfL9HFGGyiFk1slIpbc9M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1079703173153-cbuon1gj18c8br742fghdlfpi682csl2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

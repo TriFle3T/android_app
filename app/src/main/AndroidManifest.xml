@@ -19,6 +19,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".presentation.login.LoginActivity"/>
+        <activity android:name=".presentation.logout.LogoutActivity"/>
+        <activity android:name=".presentation.home.HomeActivity"/>
+
     </application>
 
 </manifest>
