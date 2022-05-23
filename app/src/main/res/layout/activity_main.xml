@@ -9,14 +9,100 @@
     tools:layout_editor_absoluteX="0dp"
     tools:layout_editor_absoluteY="177dp">
 
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/barUser"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/border_user"
+        app:layout_constraintBottom_toBottomOf="@+id/barLogo"
+        app:layout_constraintStart_toStartOf="@id/tvQuote"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <ImageView
+        android:id="@+id/barEmoji"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        app:layout_constraintBottom_toBottomOf="@+id/barLogo"
+        app:layout_constraintEnd_toEndOf="@id/tvQuote"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/border_emoji" />
+
+    <ImageView
+        android:id="@+id/barLogo"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/tvQuote"
+        app:layout_constraintEnd_toStartOf="@+id/barEmoji"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toEndOf="@+id/barUser"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.168"
+        app:srcCompat="@drawable/border_logo" />
+
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Home"
-        android:textColor="@color/background_color_reverse"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        android:id="@+id/tvQuote"
+        android:layout_width="370dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="@dimen/topMargin"
+        android:background="@drawable/box_main"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="Quote"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvChart"
+        android:layout_width="370dp"
+        android:layout_height="200dp"
+        android:background="@drawable/box_main"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="Chart"
+        app:layout_constraintBottom_toTopOf="@+id/tvMenu"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvQuote" />
+
+    <TextView
+        android:id="@+id/tvMenu"
+        android:layout_width="410dp"
+        android:layout_height="100dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnHome"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="60dp"
+        android:background="@drawable/ic_home"
+        app:layout_constraintBottom_toBottomOf="@+id/btnWrite"
+        app:layout_constraintEnd_toStartOf="@+id/btnWrite"
+        app:layout_constraintStart_toEndOf="@+id/tvMenu" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnWrite"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/ic_write_clicked"
+        app:layout_constraintEnd_toStartOf="@+id/btnDiary"
+        app:layout_constraintStart_toEndOf="@+id/btnHome"
+        app:layout_constraintTop_toTopOf="@+id/tvMenu" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnDiary"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="60dp"
+        android:background="@drawable/ic_diary_clicked"
+        app:layout_constraintBottom_toBottomOf="@+id/btnWrite"
+        app:layout_constraintEnd_toStartOf="@+id/tvMenu"
+        app:layout_constraintStart_toEndOf="@+id/btnWrite" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

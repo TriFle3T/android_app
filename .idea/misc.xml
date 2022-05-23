@@ -6,13 +6,20 @@
         <entry key="../../../layout/custom_preview.xml" value="0.1" />
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1235" />
         <entry key="app/src/main/res/drawable/blue_button.xml" value="0.103" />
+        <entry key="app/src/main/res/drawable/border_user.xml" value="0.1875" />
         <entry key="app/src/main/res/drawable/button_border.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/emoji_border.xml" value="0.136" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.1235" />
         <entry key="app/src/main/res/drawable/ic_logo.xml" value="0.1235" />
         <entry key="app/src/main/res/drawable/ic_sns.xml" value="0.148" />
         <entry key="app/src/main/res/drawable/input_border.xml" value="0.202" />
+        <entry key="app/src/main/res/drawable/logo_border.xml" value="0.156" />
+        <entry key="app/src/main/res/drawable/main_box.xml" value="0.156" />
+        <entry key="app/src/main/res/drawable/menu_border.xml" value="0.156" />
         <entry key="app/src/main/res/drawable/rounded_border.xml" value="0.103" />
         <entry key="app/src/main/res/drawable/sns_button.xml" value="0.148" />
+        <entry key="app/src/main/res/drawable/toolbar_border.xml" value="0.136" />
+        <entry key="app/src/main/res/drawable/user_border.xml" value="0.136" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_logout.xml" value="0.21388397216796876" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2691390991210938" />

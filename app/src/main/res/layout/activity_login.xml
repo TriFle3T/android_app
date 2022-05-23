@@ -57,7 +57,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="50dp"
         android:layout_marginEnd="32dp"
-        android:background="@drawable/input_border"
+        android:background="@drawable/border_input"
         android:hint="@string/email"
         android:imeOptions="actionNext"
         android:inputType="textEmailAddress"
@@ -76,7 +76,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="32dp"
-        android:background="@drawable/input_border"
+        android:background="@drawable/border_input"
         android:hint="@string/password"
         android:imeOptions="actionDone"
         android:inputType="textPassword"
@@ -97,7 +97,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="32dp"
-        android:background="@drawable/button_border"
+        android:background="@drawable/border_button"
         android:backgroundTint="#FFFFFF"
         android:text="@string/log_in"
         android:textAllCaps="false"
@@ -108,40 +108,40 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etPassword" />
 
-    <com.google.android.gms.common.SignInButton
-        android:id="@+id/btnGoogle"
-        android:layout_width="315dp"
-        android:layout_height="45dp"
-        android:layout_centerInParent="true"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="28dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/btnLogin"
-        app:layout_constraintHorizontal_bias="0.271"
-        app:layout_constraintStart_toStartOf="@+id/btnLogin"
-        app:layout_constraintTop_toBottomOf="@+id/btnLogin"
-        app:layout_constraintVertical_bias="0.123" />
-
-<!--    <com.google.android.material.button.MaterialButton-->
-<!--        android:id="@+id/mtGoogle"-->
-<!--        android:layout_width="340dp"-->
-<!--        android:layout_height="63dp"-->
-<!--        android:layout_marginTop="20dp"-->
-<!--        android:layout_weight="1"-->
-<!--        android:backgroundTint="@color/white"-->
-<!--        android:text="Login With Google"-->
-<!--        android:textColor="@color/black"-->
-<!--        android:textSize="15sp"-->
-<!--        app:cornerRadius="999dp"-->
-<!--        app:icon="@drawable/googleg_standard_color_18"-->
-<!--        app:iconPadding="10dp"-->
-<!--        app:iconTint="#00100D0D"-->
-<!--        app:iconTintMode="src_atop"-->
+<!--    <com.google.android.gms.common.SignInButton-->
+<!--        android:id="@+id/btnGoogle"-->
+<!--        android:layout_width="315dp"-->
+<!--        android:layout_height="45dp"-->
+<!--        android:layout_centerInParent="true"-->
+<!--        android:layout_marginStart="8dp"-->
+<!--        android:layout_marginTop="16dp"-->
+<!--        android:layout_marginEnd="28dp"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
 <!--        app:layout_constraintEnd_toEndOf="@+id/btnLogin"-->
-<!--        app:layout_constraintHorizontal_bias="0.484"-->
+<!--        app:layout_constraintHorizontal_bias="0.271"-->
 <!--        app:layout_constraintStart_toStartOf="@+id/btnLogin"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/btnLogin" />-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/btnLogin"-->
+<!--        app:layout_constraintVertical_bias="0.123" />-->
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/mtGoogle"
+        android:layout_width="340dp"
+        android:layout_height="63dp"
+        android:layout_marginTop="20dp"
+        android:layout_weight="1"
+        android:backgroundTint="@color/white"
+        android:text="Login With Google"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        app:cornerRadius="999dp"
+        app:icon="@drawable/googleg_standard_color_18"
+        app:iconPadding="10dp"
+        app:iconTint="#00100D0D"
+        app:iconTintMode="src_atop"
+        app:layout_constraintEnd_toEndOf="@+id/btnLogin"
+        app:layout_constraintHorizontal_bias="0.484"
+        app:layout_constraintStart_toStartOf="@+id/btnLogin"
+        app:layout_constraintTop_toBottomOf="@+id/btnLogin" />
 
     <ImageView
         android:id="@+id/imgLogo"
@@ -151,6 +151,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/hug_logo" />
+        app:srcCompat="@drawable/ic_hug" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

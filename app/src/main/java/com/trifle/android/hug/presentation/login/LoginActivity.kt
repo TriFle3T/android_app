@@ -18,6 +18,7 @@ import com.google.android.gms.common.SignInButton
 import com.google.android.gms.common.api.ApiException
 import com.google.android.gms.common.api.GoogleApiClient
 import com.google.android.gms.tasks.Task
+import com.google.android.material.button.MaterialButton
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.GoogleAuthProvider
@@ -83,7 +84,8 @@ public class LoginActivity : AppCompatActivity() {
     }
 
     private fun initGoogleButton(googleSignInClient: GoogleSignInClient) {
-        val googleButton : SignInButton = findViewById(R.id.btnGoogle)
+//        val googleButton : SignInButton = findViewById(R.id.btnGoogle)
+        val googleButton : MaterialButton = findViewById(R.id.mtGoogle)
         googleButton.setOnClickListener {
             val signInIntent = googleSignInClient.signInIntent
             startActivityForResult(signInIntent, RC_SIGN_IN)
