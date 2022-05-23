@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background_color"
-    tools:context=".MainActivity"
+    tools:context=".presentation.diary.DiaryActivity"
     tools:layout_editor_absoluteX="0dp"
     tools:layout_editor_absoluteY="177dp">
 
@@ -22,8 +22,8 @@
         android:id="@+id/barUser"
         android:layout_width="45dp"
         android:layout_height="45dp"
-        android:layout_marginEnd="100dp"
         android:layout_centerInParent="true"
+        android:layout_marginEnd="100dp"
         android:background="@drawable/border_user"
         app:layout_constraintBottom_toBottomOf="@+id/barLogo"
         app:layout_constraintEnd_toStartOf="@+id/barLogo"
@@ -50,31 +50,6 @@
         app:layout_constraintTop_toTopOf="@+id/tvBar"
         app:srcCompat="@drawable/border_logo" />
 
-    <TextView
-        android:id="@+id/tvQuote"
-        android:layout_width="370dp"
-        android:layout_height="200dp"
-        android:layout_marginTop="@dimen/topMargin"
-        android:background="@drawable/box_main"
-        android:gravity="center_horizontal|center_vertical"
-        android:text="Quote"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/tvBar" />
-
-    <TextView
-        android:id="@+id/tvChart"
-        android:layout_width="370dp"
-        android:layout_height="200dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="10dp"
-        android:background="@drawable/box_main"
-        android:gravity="center_horizontal|center_vertical"
-        android:text="Chart"
-        app:layout_constraintBottom_toTopOf="@+id/tvMenu"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvQuote" />
 
     <TextView
         android:id="@+id/tvMenu"
@@ -89,7 +64,7 @@
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_marginEnd="100dp"
-        android:background="@drawable/ic_home"
+        android:background="@drawable/btn_home"
         app:layout_constraintBottom_toBottomOf="@+id/btnWrite"
         app:layout_constraintEnd_toStartOf="@+id/btnWrite"
         app:layout_constraintStart_toEndOf="@+id/tvMenu" />
@@ -109,9 +84,8 @@
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_marginStart="100dp"
-        android:background="@drawable/btn_diary"
+        android:background="@drawable/ic_diary"
         app:layout_constraintBottom_toBottomOf="@+id/btnWrite"
         app:layout_constraintEnd_toStartOf="@+id/tvMenu"
         app:layout_constraintStart_toEndOf="@+id/btnWrite" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

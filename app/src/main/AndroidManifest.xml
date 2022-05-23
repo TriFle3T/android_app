@@ -22,7 +22,9 @@
         <activity android:name=".presentation.login.LoginActivity"/>
         <activity android:name=".presentation.logout.LogoutActivity"/>
         <activity android:name=".presentation.home.HomeActivity"/>
-
+        <activity android:name=".presentation.diary.DiaryActivity"/>
+        <activity android:name=".presentation.write.WriteActivity"/>
+        <activity android:name=".presentation.results.Resultactivity"/>
     </application>
 
 </manifest>

@@ -9,46 +9,62 @@
     tools:layout_editor_absoluteX="0dp"
     tools:layout_editor_absoluteY="177dp">
 
-    <ImageView
-        android:id="@+id/profile_image"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="124dp"
-        android:layout_marginTop="184dp"
+    <TextView
+        android:id="@+id/tvBar"
+        android:layout_width="410dp"
+        android:layout_height="100dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/profile_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/profile_image"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="196dp"
-        android:layout_marginTop="72dp"
-        android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profile_image"
-        tools:text="JY" />
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/barUser"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_centerInParent="true"
+        android:layout_marginEnd="100dp"
+        android:background="@drawable/border_user"
+        app:layout_constraintBottom_toBottomOf="@+id/barLogo"
+        app:layout_constraintEnd_toStartOf="@+id/barLogo"
+        app:layout_constraintStart_toEndOf="@+id/tvBar" />
+
+    <ImageView
+        android:id="@+id/barEmoji"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="100dp"
+        app:layout_constraintBottom_toBottomOf="@+id/barLogo"
+        app:layout_constraintEnd_toStartOf="@+id/tvBar"
+        app:layout_constraintStart_toEndOf="@+id/barLogo"
+        app:srcCompat="@drawable/border_emoji" />
+
+    <ImageView
+        android:id="@+id/barLogo"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="22.5dp"
+        app:layout_constraintEnd_toStartOf="@+id/barEmoji"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/barUser"
+        app:layout_constraintTop_toTopOf="@+id/tvBar"
+        app:srcCompat="@drawable/border_logo" />
 
     <TextView
-        android:id="@+id/profile_email"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/profile_text"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="152dp"
-        android:layout_marginTop="40dp"
-        android:textSize="14sp"
+        android:id="@+id/tvProfile"
+        android:layout_width="255dp"
+        android:layout_height="360dp"
+        android:backgroundTint="@color/background_color"
+        android:layout_marginTop="@dimen/topMargin"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profile_text"
-        tools:text="user@gmail.com" />
+        app:layout_constraintTop_toTopOf="@id/tvBar"
+        />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnLogout"
-        android:layout_width="261dp"
-        android:layout_height="41dp"
+        android:layout_width="255dp"
+        android:layout_height="50dp"
         android:layout_centerInParent="true"
         android:background="@drawable/border_button"
         android:backgroundTint="#FFFFFF"
@@ -56,10 +72,87 @@
         android:textAllCaps="false"
         android:textColor="@android:color/black"
         android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@id/tvMenu"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvProfile" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/ivProfile"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_margin="30dp"
+        app:layout_constraintBottom_toTopOf="@+id/tvName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvProfile"
+        app:srcCompat="@drawable/border_emoji" />
+
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="temp"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:layout_marginTop="30dp"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/tvEmail"
+        app:layout_constraintStart_toStartOf="@id/ivProfile"
+        app:layout_constraintEnd_toEndOf="@id/ivProfile"
+        app:layout_constraintTop_toBottomOf="@+id/ivProfile" />
+
+    <TextView
+        android:id="@+id/tvEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:text="temp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="@id/ivProfile"
+        app:layout_constraintEnd_toEndOf="@id/ivProfile"
+        app:layout_constraintTop_toBottomOf="@id/tvName"
+        />
+
+    <TextView
+        android:id="@+id/tvMenu"
+        android:layout_width="410dp"
+        android:layout_height="100dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profile_email"
-        app:layout_constraintVertical_bias="0.278" />
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnHome"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="100dp"
+        android:background="@drawable/ic_home_clicked"
+        app:layout_constraintBottom_toBottomOf="@+id/btnWrite"
+        app:layout_constraintEnd_toStartOf="@+id/btnWrite"
+        app:layout_constraintStart_toEndOf="@+id/tvMenu" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnWrite"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/ic_write_clicked"
+        app:layout_constraintEnd_toStartOf="@+id/btnDiary"
+        app:layout_constraintStart_toEndOf="@+id/btnHome"
+        app:layout_constraintTop_toTopOf="@+id/tvMenu" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnDiary"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="100dp"
+        android:background="@drawable/ic_diary_clicked"
+        app:layout_constraintBottom_toBottomOf="@+id/btnWrite"
+        app:layout_constraintEnd_toStartOf="@+id/tvMenu"
+        app:layout_constraintStart_toEndOf="@+id/btnWrite" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:state_pressed="true"
-        android:drawable="@drawable/ic_user_clicked">
+        android:drawable="@drawable/ic_home">
         <shape android:shape="rectangle">
             <corners android:radius="999dp" />
             <size
@@ -15,7 +15,7 @@
         </shape>
     </item>
     <item android:state_pressed="false"
-        android:drawable="@drawable/ic_user">
+        android:drawable="@drawable/ic_home_clicked">
         <shape android:shape="rectangle">
             <corners android:radius="999dp" />
             <size

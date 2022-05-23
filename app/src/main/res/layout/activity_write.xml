@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color"
+    tools:context=".presentation.diary.DiaryActivity"
+    tools:layout_editor_absoluteX="0dp"
+    tools:layout_editor_absoluteY="177dp">
+
+    <TextView
+        android:id="@+id/tvBar"
+        android:layout_width="410dp"
+        android:layout_height="100dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnBack"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_centerInParent="true"
+        android:layout_marginEnd="300dp"
+        android:background="@drawable/border_back"
+        app:layout_constraintBottom_toBottomOf="@+id/tvBar"
+        app:layout_constraintEnd_toEndOf="@+id/tvBar"
+        app:layout_constraintStart_toStartOf="@+id/tvBar"
+        app:layout_constraintTop_toTopOf="@+id/tvBar" />
+
+
+    <TextView
+        android:id="@+id/tvMenu"
+        android:layout_width="410dp"
+        android:layout_height="100dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnSubmit"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="300dp"
+        android:background="@drawable/btn_submit"
+        app:layout_constraintBottom_toBottomOf="@+id/tvMenu"
+        app:layout_constraintEnd_toEndOf="@+id/tvMenu"
+        app:layout_constraintStart_toStartOf="@+id/tvMenu"
+        app:layout_constraintTop_toTopOf="@+id/tvMenu" />
+
+    <TextView
+        android:id="@+id/tvQuestion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="150dp"
+        android:text="Q.오늘 하루는 어땠나요?"
+        android:textColor="@color/white"
+        android:textSize="25dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/etContent"
+        app:layout_constraintTop_toBottomOf="@+id/tvBar" />
+
+    <EditText
+        android:id="@+id/etContent"
+        android:layout_width="370dp"
+        android:layout_height="380dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/box_main"
+        android:gravity="top"
+        android:hint="Ex) 오늘 취업해서 기분이 날아갈거 같아요!"
+        android:padding="20dp"
+        android:textColor="@color/white"
+        android:textColorHint="#99FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvQuestion" />
+
+    <EditText
+        android:id="@+id/etTitle"
+        android:layout_width="310dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="14dp"
+        android:background="@drawable/box_main"
+        android:gravity="center_vertical"
+        android:hint="Ex) 취뽀한 날 !!"
+        android:padding="10dp"
+        android:textColor="@color/white"
+        android:textColorHint="#99FFFFFF"
+        app:layout_constraintEnd_toEndOf="@id/etContent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tvTitle"
+        app:layout_constraintTop_toBottomOf="@+id/etContent" />
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="9dp"
+        android:text="제목 :"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/etTitle"
+        app:layout_constraintEnd_toStartOf="@+id/etTitle"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@id/etContent"
+        app:layout_constraintHorizontal_chainStyle="packed"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,28 +3,29 @@ package com.trifle.android.hug.presentation.logout
 import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
-import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatButton
+import com.bumptech.glide.Glide
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.firebase.auth.FirebaseAuth
-import com.squareup.picasso.Picasso
 import com.trifle.android.hug.R
+import com.trifle.android.hug.presentation.diary.DiaryActivity
+import com.trifle.android.hug.presentation.home.HomeActivity
 import com.trifle.android.hug.presentation.login.LoginActivity
-import kotlin.math.sign
+import com.trifle.android.hug.presentation.write.WriteActivity
+import de.hdodenhof.circleimageview.CircleImageView
 
 
 class LogoutActivity : AppCompatActivity() {
     private var auth: FirebaseAuth = FirebaseAuth.getInstance()
-    val GOOGLE_ACCOUNT = "google_account"
     private var profileName: TextView? = null
     private var profileEmail:TextView? = null
-    private var profileImage: ImageView? = null
+    private var profileImage: CircleImageView? = null
     private var mGoogleSignInAccount: GoogleSignInAccount? = null
     private var mGoogleSignInClient: GoogleSignInClient? = null
 
@@ -37,11 +38,12 @@ class LogoutActivity : AppCompatActivity() {
 
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
 
-        profileName = findViewById(R.id.profile_text);
-        profileEmail = findViewById(R.id.profile_email);
-        profileImage = findViewById(R.id.profile_image);
+        profileName = findViewById(R.id.tvName);
+        profileEmail = findViewById(R.id.tvEmail);
+        profileImage = findViewById(R.id.ivProfile);
 
-        mGoogleSignInAccount = getIntent().getParcelableExtra(GOOGLE_ACCOUNT);
+        mGoogleSignInAccount = GoogleSignIn.getLastSignedInAccount(this)
+
         setDataOnView();
         val logoutButton = findViewById<AppCompatButton>(R.id.btnLogout)
 
@@ -64,14 +66,43 @@ class LogoutActivity : AppCompatActivity() {
                 })
             alt_bld.show()
         }
+        val homeButton = findViewById<AppCompatButton>(R.id.btnHome)
+        val diaryButton = findViewById<AppCompatButton>(R.id.btnDiary)
+        val writeButton = findViewById<AppCompatButton>(R.id.btnWrite)
 
-
+        writeButton.setOnClickListener {
+            val intent : Intent =  Intent(this, WriteActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+        homeButton.setOnClickListener {
+            val intent : Intent = Intent(this, HomeActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+        diaryButton.setOnClickListener {
+            val intent : Intent = Intent(this, DiaryActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
 
     }
     private fun setDataOnView(){
-        Picasso.get().load(mGoogleSignInAccount?.getPhotoUrl()).centerInside().fit().into(profileImage);
-        profileName?.setText(mGoogleSignInAccount?.getDisplayName());
-        profileEmail?.setText(mGoogleSignInAccount?.getEmail());
+        mGoogleSignInAccount?.let{
+            val name = it.displayName
+            val email = it.email
+            val url = it.photoUrl
+            profileName?.text = name
+            profileEmail?.setText(email)
+            profileImage?.let { it ->
+                Glide.with(this)
+                    .load(url)
+                    .error(R.drawable.ic_hug)
+                    .override(150, 150)
+                    .circleCrop()
+                    .into(it)
+            }
+        }
     }
     private fun signOut(){
         auth.signOut()
