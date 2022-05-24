@@ -73,7 +73,6 @@ class LogoutActivity : AppCompatActivity() {
         writeButton.setOnClickListener {
             val intent : Intent =  Intent(this, WriteActivity::class.java)
             startActivity(intent)
-            finish()
         }
         homeButton.setOnClickListener {
             val intent : Intent = Intent(this, HomeActivity::class.java)

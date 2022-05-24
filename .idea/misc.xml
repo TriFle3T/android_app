@@ -31,7 +31,7 @@
         <entry key="app/src/main/res/drawable/toolbar_border.xml" value="0.136" />
         <entry key="app/src/main/res/drawable/user_border.xml" value="0.136" />
         <entry key="app/src/main/res/layout/activity_diary.xml" value="0.24895833333333334" />
-        <entry key="app/src/main/res/layout/activity_login.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.1539794921875" />
         <entry key="app/src/main/res/layout/activity_logout.xml" value="0.281744384765625" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2691390991210938" />
         <entry key="app/src/main/res/layout/activity_result.xml" value="0.24895833333333334" />

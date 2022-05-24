@@ -12,7 +12,7 @@
     <TextView
         android:id="@+id/tvBar"
         android:layout_width="410dp"
-        android:layout_height="100dp"
+        android:layout_height="80dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -20,8 +20,8 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnBack"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:layout_centerInParent="true"
         android:layout_marginEnd="300dp"
         android:background="@drawable/border_back"

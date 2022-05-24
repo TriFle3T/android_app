@@ -50,63 +50,63 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/etEmail"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="32dp"
-        android:background="@drawable/border_input"
-        android:hint="@string/email"
-        android:imeOptions="actionNext"
-        android:inputType="textEmailAddress"
-        android:textColor="@color/white"
-        android:textColorHint="@color/background_color_reverse"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvLogo" />
+<!--    <EditText-->
+<!--        android:id="@+id/etEmail"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="32dp"-->
+<!--        android:layout_marginTop="50dp"-->
+<!--        android:layout_marginEnd="32dp"-->
+<!--        android:background="@drawable/border_input"-->
+<!--        android:hint="@string/email"-->
+<!--        android:imeOptions="actionNext"-->
+<!--        android:inputType="textEmailAddress"-->
+<!--        android:textColor="@color/white"-->
+<!--        android:textColorHint="@color/background_color_reverse"-->
+<!--        android:textSize="20sp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.0"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/tvLogo" />-->
 
-    <EditText
-        android:id="@+id/etPassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="32dp"
-        android:background="@drawable/border_input"
-        android:hint="@string/password"
-        android:imeOptions="actionDone"
-        android:inputType="textPassword"
-        android:textColor="@color/background_color_reverse"
-        android:textColorHint="@color/background_color_reverse"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/etEmail" />
+<!--    <EditText-->
+<!--        android:id="@+id/etPassword"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="32dp"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        android:layout_marginEnd="32dp"-->
+<!--        android:background="@drawable/border_input"-->
+<!--        android:hint="@string/password"-->
+<!--        android:imeOptions="actionDone"-->
+<!--        android:inputType="textPassword"-->
+<!--        android:textColor="@color/background_color_reverse"-->
+<!--        android:textColorHint="@color/background_color_reverse"-->
+<!--        android:textSize="20sp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.0"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/etEmail" />-->
 
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnLogin"
-        android:layout_width="340dp"
-        android:layout_height="50dp"
-        android:layout_centerInParent="true"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="32dp"
-        android:background="@drawable/border_button"
-        android:backgroundTint="#FFFFFF"
-        android:text="@string/log_in"
-        android:textAllCaps="false"
-        android:textColor="@android:color/black"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etPassword" />
+<!--    <androidx.appcompat.widget.AppCompatButton-->
+<!--        android:id="@+id/btnLogin"-->
+<!--        android:layout_width="340dp"-->
+<!--        android:layout_height="50dp"-->
+<!--        android:layout_centerInParent="true"-->
+<!--        android:layout_marginStart="32dp"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        android:layout_marginEnd="32dp"-->
+<!--        android:background="@drawable/border_button"-->
+<!--        android:backgroundTint="#FFFFFF"-->
+<!--        android:text="@string/log_in"-->
+<!--        android:textAllCaps="false"-->
+<!--        android:textColor="@android:color/black"-->
+<!--        android:textSize="20sp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.0"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/etPassword" />-->
 
 <!--    <com.google.android.gms.common.SignInButton-->
 <!--        android:id="@+id/btnGoogle"-->
@@ -127,7 +127,7 @@
         android:id="@+id/mtGoogle"
         android:layout_width="340dp"
         android:layout_height="63dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="200dp"
         android:layout_weight="1"
         android:backgroundTint="@color/white"
         android:text="Login With Google"
@@ -138,10 +138,9 @@
         app:iconPadding="10dp"
         app:iconTint="#00100D0D"
         app:iconTintMode="src_atop"
-        app:layout_constraintEnd_toEndOf="@+id/btnLogin"
-        app:layout_constraintHorizontal_bias="0.484"
-        app:layout_constraintStart_toStartOf="@+id/btnLogin"
-        app:layout_constraintTop_toBottomOf="@+id/btnLogin" />
+        app:layout_constraintEnd_toEndOf="@+id/tvLogo"
+        app:layout_constraintStart_toStartOf="@+id/tvLogo"
+        app:layout_constraintTop_toBottomOf="@+id/tvLogo" />
 
     <ImageView
         android:id="@+id/imgLogo"
