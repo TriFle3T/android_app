@@ -50,6 +50,16 @@
         app:layout_constraintTop_toTopOf="@+id/tvBar"
         app:srcCompat="@drawable/border_logo" />
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="100dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
+        app:layout_constraintTop_toTopOf="@+id/tvBar"
+        />
 
     <TextView
         android:id="@+id/tvMenu"
@@ -75,12 +85,12 @@
         android:layout_height="40dp"
         android:layout_marginTop="30dp"
         android:background="@drawable/btn_write"
-        app:layout_constraintEnd_toStartOf="@+id/btnDiary"
+        app:layout_constraintEnd_toStartOf="@+id/btnDown"
         app:layout_constraintStart_toEndOf="@+id/btnHome"
         app:layout_constraintTop_toTopOf="@+id/tvMenu" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnDiary"
+        android:id="@+id/btnDown"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_marginStart="100dp"

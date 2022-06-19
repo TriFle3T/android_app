@@ -22,8 +22,8 @@
         android:id="@+id/barUser"
         android:layout_width="45dp"
         android:layout_height="45dp"
-        android:layout_marginEnd="100dp"
         android:layout_centerInParent="true"
+        android:layout_marginEnd="100dp"
         android:background="@drawable/border_user"
         app:layout_constraintBottom_toBottomOf="@+id/barLogo"
         app:layout_constraintEnd_toStartOf="@+id/barLogo"
@@ -50,17 +50,36 @@
         app:layout_constraintTop_toTopOf="@+id/tvBar"
         app:srcCompat="@drawable/border_logo" />
 
-    <TextView
-        android:id="@+id/tvQuote"
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnLeft"
+        android:layout_width="27dp"
+        android:layout_height="40dp"
+        android:background="@drawable/ic_left_arrow"
+        app:layout_constraintBottom_toBottomOf="@id/tvContent"
+        app:layout_constraintStart_toStartOf="@id/tvContent"
+        app:layout_constraintTop_toTopOf="@id/tvContent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnRight"
+        android:layout_width="27dp"
+        android:layout_height="40dp"
+        android:background="@drawable/ic_right_arrow"
+        app:layout_constraintBottom_toBottomOf="@id/tvContent"
+        app:layout_constraintEnd_toEndOf="@id/tvContent"
+        app:layout_constraintTop_toTopOf="@id/tvContent" />
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/tvContent"
         android:layout_width="370dp"
         android:layout_height="200dp"
         android:layout_marginTop="@dimen/topMargin"
         android:background="@drawable/box_main"
-        android:gravity="center_horizontal|center_vertical"
-        android:text="Quote"
+        android:foregroundGravity="center"
+        android:orientation="horizontal"
+        android:padding="23dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/tvBar" />
+        app:layout_constraintTop_toTopOf="@id/tvBar"></androidx.viewpager2.widget.ViewPager2>
 
     <TextView
         android:id="@+id/tvChart"
@@ -70,11 +89,38 @@
         android:layout_marginBottom="10dp"
         android:background="@drawable/box_main"
         android:gravity="center_horizontal|center_vertical"
-        android:text="Chart"
         app:layout_constraintBottom_toTopOf="@+id/tvMenu"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvQuote" />
+        app:layout_constraintTop_toBottomOf="@+id/tvContent" />
+
+    <!--    app:egBarWidth="20dp"-->
+    <!--    app:egEnableScroll="true"-->
+    <!--    app:egFixedBarWidth="true"-->
+    <!--    app:egLegendHeight="40dp"-->
+
+    <!--    <org.eazegraph.lib.charts.PieChart-->
+    <!--        android:id="@+id/pcChart"-->
+    <!--        android:layout_width="197dp"-->
+    <!--        android:layout_height="184dp"-->
+    <!--        android:layout_marginStart="8dp"-->
+    <!--        android:layout_marginTop="15dp"-->
+    <!--        android:layout_marginBottom="20dp"-->
+    <!--        android:padding="2dp"-->
+    <!--        app:layout_constraintBottom_toBottomOf="@id/tvChart"-->
+    <!--        app:layout_constraintStart_toStartOf="@id/tvChart"-->
+    <!--        app:layout_constraintTop_toTopOf="@id/tvChart"-->
+    <!--        app:layout_constraintVertical_bias="0.0" />-->
+
+    <com.github.mikephil.charting.charts.PieChart
+        android:id="@+id/pcChart"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
+        android:layout_marginStart="20dp"
+        app:layout_constraintBottom_toBottomOf="@id/tvChart"
+        app:layout_constraintStart_toStartOf="@id/tvChart"
+        app:layout_constraintTop_toTopOf="@id/tvChart"
+        app:layout_constraintVertical_bias="0.392" />
 
     <TextView
         android:id="@+id/tvMenu"
@@ -100,12 +146,12 @@
         android:layout_height="40dp"
         android:layout_marginTop="30dp"
         android:background="@drawable/btn_write"
-        app:layout_constraintEnd_toStartOf="@+id/btnDiary"
+        app:layout_constraintEnd_toStartOf="@+id/btnDown"
         app:layout_constraintStart_toEndOf="@+id/btnHome"
         app:layout_constraintTop_toTopOf="@+id/tvMenu" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnDiary"
+        android:id="@+id/btnDown"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_marginStart="100dp"
@@ -113,5 +159,136 @@
         app:layout_constraintBottom_toBottomOf="@+id/btnWrite"
         app:layout_constraintEnd_toStartOf="@+id/tvMenu"
         app:layout_constraintStart_toEndOf="@+id/btnWrite" />
+
+
+    <ImageView
+        android:id="@+id/imgEmo1"
+        android:layout_width="@dimen/icon"
+        android:layout_height="@dimen/icon"
+        app:layout_constraintBottom_toTopOf="@+id/imgEmo2"
+        app:layout_constraintTop_toBottomOf="@+id/tvChart"
+        tools:layout_editor_absoluteX="241dp"
+        app:layout_constraintStart_toEndOf="@id/pcChart"
+        android:layout_marginStart="30dp"
+        tools:srcCompat="@tools:sample/avatars"
+        app:layout_constraintVertical_chainStyle="packed"
+        android:layout_marginBottom="10dp"/>
+
+    <TextView
+        android:id="@+id/tvEmo1"
+        android:layout_width="@dimen/icon_text"
+        android:layout_height="@dimen/icon"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/tvEmo2"
+        app:layout_constraintTop_toBottomOf="@+id/tvChart"
+        app:layout_constraintEnd_toEndOf="@id/tvChart"
+        android:gravity="center_vertical"
+        android:layout_marginEnd="50dp"
+        tools:layout_editor_absoluteX="286dp"
+        android:layout_marginBottom="10dp"/>
+
+    <ImageView
+        android:id="@+id/imgEmo2"
+        android:layout_width="@dimen/icon"
+        android:layout_height="@dimen/icon"
+        app:layout_constraintBottom_toTopOf="@+id/imgEmo3"
+        app:layout_constraintTop_toBottomOf="@+id/imgEmo1"
+        tools:layout_editor_absoluteX="241dp"
+        app:layout_constraintStart_toEndOf="@id/pcChart"
+        android:layout_marginStart="30dp"
+        tools:srcCompat="@tools:sample/avatars"
+        android:layout_marginBottom="10dp"/>
+    <TextView
+        android:id="@+id/tvEmo2"
+        android:layout_width="@dimen/icon_text"
+        android:layout_height="@dimen/icon"
+        app:layout_constraintBottom_toTopOf="@+id/tvEmo3"
+        app:layout_constraintTop_toBottomOf="@+id/tvEmo1"
+        android:gravity="center_vertical"
+        app:layout_constraintEnd_toEndOf="@id/tvChart"
+        android:layout_marginEnd="50dp"
+        tools:layout_editor_absoluteX="286dp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:layout_marginBottom="10dp"/>
+
+
+    <ImageView
+        android:id="@+id/imgEmo3"
+        android:layout_width="@dimen/icon"
+        android:layout_height="@dimen/icon"
+        app:layout_constraintBottom_toTopOf="@+id/imgEmo4"
+        app:layout_constraintTop_toBottomOf="@+id/imgEmo2"
+        tools:layout_editor_absoluteX="241dp"
+        app:layout_constraintStart_toEndOf="@id/pcChart"
+        android:layout_marginStart="30dp"
+        tools:srcCompat="@tools:sample/avatars"
+        android:layout_marginBottom="10dp"/>
+
+    <TextView
+        android:id="@+id/tvEmo3"
+        android:layout_width="110dp"
+        android:layout_height="@dimen/icon"
+        android:layout_marginBottom="10dp"
+        android:gravity="center_vertical"
+        android:text="일기를 써봐요!"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/tvEmo4"
+        app:layout_constraintEnd_toEndOf="@id/tvChart"
+        app:layout_constraintTop_toBottomOf="@+id/tvEmo2" />
+
+    <ImageView
+        android:id="@+id/imgEmo4"
+        android:layout_width="@dimen/icon"
+        android:layout_height="@dimen/icon"
+        app:layout_constraintBottom_toTopOf="@+id/imgEmo5"
+        app:layout_constraintTop_toBottomOf="@+id/imgEmo3"
+        tools:layout_editor_absoluteX="241dp"
+        app:layout_constraintStart_toEndOf="@id/pcChart"
+        android:layout_marginStart="30dp"
+        tools:srcCompat="@tools:sample/avatars"
+        android:layout_marginBottom="10dp"/>
+
+    <TextView
+        android:id="@+id/tvEmo4"
+        android:layout_width="@dimen/icon_text"
+        android:layout_height="@dimen/icon"
+        app:layout_constraintBottom_toTopOf="@+id/tvEmo5"
+        app:layout_constraintTop_toBottomOf="@+id/tvEmo3"
+        app:layout_constraintEnd_toEndOf="@id/tvChart"
+        android:gravity="center_vertical"
+        android:layout_marginEnd="50dp"
+        tools:layout_editor_absoluteX="286dp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:layout_marginBottom="10dp"/>
+
+
+    <ImageView
+        android:id="@+id/imgEmo5"
+        android:layout_width="@dimen/icon"
+        android:layout_height="@dimen/icon"
+        app:layout_constraintBottom_toTopOf="@+id/tvChart"
+        app:layout_constraintTop_toBottomOf="@+id/imgEmo4"
+        tools:layout_editor_absoluteX="241dp"
+        app:layout_constraintStart_toEndOf="@id/pcChart"
+        android:layout_marginStart="30dp"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/tvEmo5"
+        android:layout_width="@dimen/icon_text"
+        android:layout_height="@dimen/icon"
+        app:layout_constraintBottom_toTopOf="@+id/tvChart"
+        app:layout_constraintTop_toBottomOf="@+id/tvEmo4"
+        app:layout_constraintEnd_toEndOf="@id/tvChart"
+        android:gravity="center_vertical"
+        android:layout_marginEnd="50dp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="286dp" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

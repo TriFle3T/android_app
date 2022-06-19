@@ -19,12 +19,17 @@ import com.google.android.material.button.MaterialButton
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.GoogleAuthProvider
+import com.trifle.android.hug.MainActivity
 import com.trifle.android.hug.R
 import com.trifle.android.hug.RetrofitClass
-import com.trifle.android.hug.data.request.User
+import com.trifle.android.hug.data.database.userDb
+import com.trifle.android.hug.data.entity.token
+import com.trifle.android.hug.data.request.login
 import com.trifle.android.hug.domain.api.API
 import com.trifle.android.hug.domain.dto.SignInRequestDto
-import com.trifle.android.hug.presentation.home.HomeActivity
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -37,6 +42,7 @@ public class LoginActivity : AppCompatActivity() {
     private val REQ_SIGN_GOOGLE = 100
     /* Retrofit 빌드 */
     private var rtf : Retrofit? = null
+    private var db : userDb? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -75,6 +81,7 @@ public class LoginActivity : AppCompatActivity() {
 //        }
 
         rtf = RetrofitClass().getRetrofitInstance()
+        db = userDb.getInstance(applicationContext)
 
 //        initLoginButton(loginButton)
 
@@ -163,52 +170,50 @@ public class LoginActivity : AppCompatActivity() {
             }
     }
     private fun callRequestLogin(user :FirebaseUser? ,task :Task<GoogleSignInAccount>) {
-//        try {
-            val account = task.getResult(ApiException::class.java)
-            val email = account?.email.toString()
-            val displayName = account?.displayName.toString()
-            val dto = SignInRequestDto(email,displayName)
-            Log.d("account", email)
-            Log.d("account", displayName)
-            val api = rtf?.create(API::class.java)
-//        updateUI(user)
-//        finish()
-            /* Login API POST 호출 */
-//            var callAPI = RetrofitClass().api?.requestLogin(dto)
-            var callAPI = api?.requestLogin(dto)
+        val account = task.getResult(ApiException::class.java)
+        val email = account?.email.toString()
+        val displayName = account?.displayName.toString()
+        val dto = SignInRequestDto(email,displayName)
+        Log.d("account", email)
+        Log.d("account", displayName)
+        val api = rtf?.create(API::class.java)
 
-            //API 안에가 보내는 형식
-            if(callAPI != null) {
-                callAPI.enqueue(object : Callback<User> { //User가 받는 형식
-                    override fun onResponse(call: Call<User>, response: Response<User>) {
-                        if (response.isSuccessful) { //code = 200
-                            Log.d("Login Success", response.code().toString())
-                            Log.d("result : ", response.body().toString())
-                            val token = response.body()?.data?.token
-                            val data = response.body()?.data?.result?.result
+        /* Login API POST 호출 */
+        var callAPI = api?.requestLogin(dto)
 
-                            updateUI(user)
-                        } else { //code = 400
-                            Log.d("Code 400 Error", response.toString())
+        //API 안에가 보내는 형식
+        if(callAPI != null) {
+            callAPI.enqueue(object : Callback<login> { //User가 받는 형식
+                override fun onResponse(call: Call<login>, response: Response<login>) {
+                    if (response.isSuccessful) { //code = 200
+                        Log.d("Login Success", response.code().toString())
+                        Log.d("result : ", response.body().toString())
+
+                        /* token 저장. -> 비동기 처리.*/
+                        val tks = response.body()?.data?.token
+                        val tkc = token(tks.toString(),email)
+                        CoroutineScope(Dispatchers.IO).launch {
+                            db!!.tokenDao().insert(tkc)
                         }
-                    }
 
-                    override fun onFailure(call: Call<User>, t: Throwable) {
-                        //code = 500
-                        Log.d("Code 500 Error", t.toString())
+                        updateUI(user)
+                    } else { //code = 400
+                        Log.d("Code 400 Error", response.toString())
                     }
-                })
-            }
-//        } catch (e: ApiException) {
-//            Log.w("failed", "signInResult:failed code=" + e.statusCode)
-//        }
+                }
+
+                override fun onFailure(call: Call<login>, t: Throwable) {
+                    //code = 500
+                    Log.d("Code 500 Error", t.toString())
+                }
+            })
+        }
 
     }
     private fun updateUI(user : FirebaseUser?){
         if(user != null){
-            val intent : Intent =  Intent(this, HomeActivity::class.java)
+            val intent : Intent =  Intent(this, MainActivity::class.java)
             startActivity(intent)
-            finish()
         }
     }
 //    private fun getInputEmail() : String{

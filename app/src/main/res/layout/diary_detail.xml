@@ -4,39 +4,59 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/capture_target"
     android:background="@color/background_color"
-    tools:context=".presentation.results.ResultActivity"
+    tools:context=".presentation.diary.DetailActivity"
     tools:layout_editor_absoluteX="0dp"
     tools:layout_editor_absoluteY="177dp">
 
 
     <TextView
-        android:id="@+id/imgCloud"
-        android:layout_width="370dp"
-        android:layout_height="280dp"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/img_cloud"
-        android:gravity="center_horizontal|center_vertical"
+        android:id="@+id/tvBar"
+        android:layout_width="410dp"
+        android:layout_height="80dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnBack"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_centerInParent="true"
+        android:layout_marginEnd="300dp"
+        android:background="@drawable/border_back"
+        app:layout_constraintBottom_toBottomOf="@+id/tvBar"
+        app:layout_constraintEnd_toEndOf="@+id/tvBar"
+        app:layout_constraintStart_toStartOf="@+id/tvBar"
+        app:layout_constraintTop_toTopOf="@+id/tvBar" />
+
+    <TextView
+        android:id="@+id/imgCloud"
+        android:layout_width="332dp"
+        android:layout_height="229dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/img_diary"
+        android:gravity="center_horizontal|center_vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvBar" />
 
     <TextView
         android:id="@+id/tvContent"
         android:layout_width="370dp"
-        android:layout_height="280dp"
-        android:layout_marginTop="20dp"
+        android:layout_height="250dp"
         android:background="@drawable/box_main"
+        android:fontFamily="sans-serif-medium"
         android:gravity="center_horizontal|center_vertical"
-        android:padding="25dp"
+        android:padding="20dp"
         android:text="text"
-        android:textColor="@color/white"
-        android:textSize="25dp"
-        android:textStyle="bold"
+        android:textColor="@color/background_color"
+        android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/tvBar" />
 
     <com.github.mikephil.charting.charts.HorizontalBarChart
         android:id="@+id/bcEmotion"
@@ -46,14 +66,16 @@
         android:backgroundTint="@color/box"
         app:layout_constraintBottom_toBottomOf="@id/tvChart"
         app:layout_constraintEnd_toEndOf="@id/tvChart"
-        app:layout_constraintTop_toTopOf="@+id/tvChart"></com.github.mikephil.charting.charts.HorizontalBarChart>
+        app:layout_constraintTop_toTopOf="@+id/tvChart">
+
+    </com.github.mikephil.charting.charts.HorizontalBarChart>
 
 
     <TextView
         android:id="@+id/tvChart"
-        android:layout_width="370dp"
-        android:layout_height="250dp"
-        android:layout_marginTop="10dp"
+        android:layout_width="374dp"
+        android:layout_height="232dp"
+        android:layout_marginTop="30dp"
         android:layout_marginBottom="10dp"
         android:background="@drawable/box_main"
         android:gravity="center_horizontal|center_vertical"
@@ -92,7 +114,7 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnDown"
-        android:background="@drawable/btn_download"
+        android:backgroundTint="@color/background_color"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_marginStart="100dp"

@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.trifle.android.hug">
     <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_main"
@@ -21,10 +22,16 @@
         </activity>
         <activity android:name=".presentation.login.LoginActivity"/>
         <activity android:name=".presentation.logout.LogoutActivity"/>
-        <activity android:name=".presentation.home.HomeActivity"/>
         <activity android:name=".presentation.diary.DiaryActivity"/>
         <activity android:name=".presentation.write.WriteActivity"/>
-        <activity android:name=".presentation.results.Resultactivity"/>
+        <activity android:name=".presentation.results.ResultActivity"/>
+        <activity android:name=".presentation.diary.DetailActivity"/>
+    <service android:name=".presentation.message.MyFirebaseMessagingService"
+        android:exported="false">
+        <intent-filter>
+            <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+        </intent-filter>
+    </service>
     </application>
 
 </manifest>

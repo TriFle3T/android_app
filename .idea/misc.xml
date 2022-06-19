@@ -13,7 +13,9 @@
         <entry key="app/src/main/res/drawable/border_logo.xml" value="0.24" />
         <entry key="app/src/main/res/drawable/border_user.xml" value="0.1875" />
         <entry key="app/src/main/res/drawable/box_main.xml" value="0.126" />
+        <entry key="app/src/main/res/drawable/box_result.xml" value="0.1205" />
         <entry key="app/src/main/res/drawable/btn_diary.xml" value="0.179" />
+        <entry key="app/src/main/res/drawable/btn_download.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/btn_home.xml" value="0.179" />
         <entry key="app/src/main/res/drawable/btn_submit.xml" value="0.179" />
         <entry key="app/src/main/res/drawable/btn_write.xml" value="0.179" />
@@ -33,9 +35,13 @@
         <entry key="app/src/main/res/layout/activity_diary.xml" value="0.24895833333333334" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.1539794921875" />
         <entry key="app/src/main/res/layout/activity_logout.xml" value="0.281744384765625" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.2691390991210938" />
-        <entry key="app/src/main/res/layout/activity_result.xml" value="0.24895833333333334" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.3242009132420091" />
+        <entry key="app/src/main/res/layout/activity_result.xml" value="0.28794642857142855" />
         <entry key="app/src/main/res/layout/activity_write.xml" value="0.2427536231884058" />
+        <entry key="app/src/main/res/layout/diary_detail.xml" value="0.23641304347826086" />
+        <entry key="app/src/main/res/layout/list_diary.xml" value="0.3191024780273437" />
+        <entry key="app/src/main/res/layout/list_quotes.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/pie_chart.xml" value="0.28894927536231885" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1" />
       </map>
     </option>

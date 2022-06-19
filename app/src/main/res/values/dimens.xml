@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="topMargin">130dp</dimen>
+    <dimen name="icon">28dp</dimen>
+    <dimen name="icon_text">60dp</dimen>
+    <dimen name="icon_result">20dp</dimen>
+    <dimen name="ptg_margin">20dp</dimen>
+
 </resources>
