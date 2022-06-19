@@ -1,15 +1,15 @@
-# android_app
+# Hug
 
 <!-- code_chunk_output -->
 
-- [Hug](#Hug)
+- [About](#About)
 - [Layout](#layout)
 
 <!-- /code_chunk_output -->
 
 ---
 
-## Hug
+## About
 
 하루 일기를 작성하고 감정을 진단받을 수 있습니다. 그리고 현재 감정에 도움이 되는 격언을 받아보세요.
 
